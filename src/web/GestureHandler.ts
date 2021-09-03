@@ -467,7 +467,7 @@ function invokeNullableMethod(
           const { argMapping } = method.__nodeConfig;
           if (Array.isArray(argMapping)) {
             for (const index in argMapping) {
-              const [key, value] = argMapping[index];
+              const [key, value]: any = argMapping[index];
               if (key in event.nativeEvent) {
                 // @ts-ignore fix method type
                 const nativeValue = event.nativeEvent[key];
